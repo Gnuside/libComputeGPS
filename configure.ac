@@ -1,5 +1,5 @@
 AC_INIT([libComputeGPS], [1.0], [roland.laures@gnuside.com])
-AM_PATH_CHECK()
+PKG_CHECK_MODULES([CHECK],[check >= 0.8.2])
 AM_INIT_AUTOMAKE([-Wall -Werror foreign])
 AM_PROG_AR
 AC_PROG_RANLIB

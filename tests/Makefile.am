@@ -1,5 +1,7 @@
 ## Process this file with automake to produce Makefile.in
 
+AM_CPPFLAGS = -I$(top_srcdir)/src
+
 TESTS = check_ComputeGPS
 check_PROGRAMS = check_ComputeGPS
 check_ComputeGPS_SOURCES = check_ComputeGPS.c $(top_builddir)/src/libComputeGPS.h
