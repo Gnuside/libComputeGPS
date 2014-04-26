@@ -15,7 +15,7 @@ START_TEST (test_Heading_approxHeadingFromStartToArrival)
 								 // North-East-East of Place de la Nation
 								 { lat: 48848407, lon: 2397462},
 								 // East of Place de la Nation
-								 { lat: 48847863, lon: 2397821}, // fail 11 instead of 5
+								 { lat: 48847863, lon: 2397821},
 								 // South-East-East of Place de la Nation
 								 { lat: 48847560, lon: 2397102},
 								 // South-East of Place de la Nation

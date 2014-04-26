@@ -31,25 +31,25 @@ cgps_heading_t CGPS_ApproxHeadingFromStartToArrival(
 			result = CGPS_HEADING_WEST;
 		}
 	} else {
-		// Heading North
+		// Heading South
 		if (rD > 5.0) {
-			result = CGPS_HEADING_EAST;
+			result = CGPS_HEADING_WEST;
 		} else if (rD > 1.5) {
-			result = CGPS_HEADING_SOUTH_EAST_EAST;
+			result = CGPS_HEADING_SOUTH_WEST_WEST;
 		} else if (rD > 0.66) {
-			result = CGPS_HEADING_SOUTH_EAST;
+			result = CGPS_HEADING_SOUTH_WEST;
 		} else if (rD > 0.2) {
-			result = CGPS_HEADING_SOUTH_SOUTH_EAST;
+			result = CGPS_HEADING_SOUTH_SOUTH_WEST;
 		} else if (rD > -0.2) {
 			result = CGPS_HEADING_SOUTH;
 		} else if (rD > -0.66) {
-			result = CGPS_HEADING_SOUTH_SOUTH_WEST;
+			result = CGPS_HEADING_SOUTH_SOUTH_EAST;
 		} else if (rD > -1.5) {
-			result = CGPS_HEADING_SOUTH_WEST;
+			result = CGPS_HEADING_SOUTH_EAST;
 		} else if (rD > -5) {
-			result = CGPS_HEADING_SOUTH_WEST_WEST;
+			result = CGPS_HEADING_SOUTH_EAST_EAST;
 		} else { // rD <= -5
-			result = CGPS_HEADING_WEST;
+			result = CGPS_HEADING_EAST;
 		}
 	}
 	return result;
