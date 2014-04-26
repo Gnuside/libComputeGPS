@@ -16,4 +16,7 @@ src/.deps/
 src/libComputeGPS.a
 test-driver
 tests/.deps/
+tests/*.log
+tests/check_ComputeGPS
+tests/*.trs
 
