@@ -3,6 +3,12 @@ libComputeGPS
 
 Here we describe the usage and function of the library.
 
+Git usage
+---------
+
+Use git-flow patterns to add branches and develop on this library.
+See http://yakiloo.com/getting-started-git-flow/ for reference.
+
 General Idea
 ------------
 
