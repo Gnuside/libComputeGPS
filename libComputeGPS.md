@@ -3,6 +3,12 @@ libComputeGPS
 
 Here we describe the usage and function of the library.
 
+Git usage
+---------
+
+Use git-flow patterns to add branches and develop on this library.
+See http://yakiloo.com/getting-started-git-flow/ for reference.
+
 General Idea
 ------------
 
@@ -168,4 +174,17 @@ To do so, we simply make a difference between :
 - arrival latitude (la1) and start latitude (la0), called `dla`
 - arrival longitude (lo1) and start longitude (lo1), called `dlo`
 
+We also compute the ratio between dlo and dla, and we call it rD.
+
+- If dla is positive then we know we have to head North
+  - if rD > 5 then atan(dR) will be > 78.75° which lead us to head East
+  - 5 ≥ rD > 1.5 then 78.75 ≥ atan(dR) > 56.25° -> head North-East-East
+  - 1.5 ≥ rD > 0.66 then 56.25 ≥ atan(dR) > 33.75° -> head North-East
+  - 0.66 ≥ rD > 0.2 then 33.75 ≥ atan(dR) > 11.25° -> head North-North-East
+  - 0.2 ≥ rD > -0.2 then 11.25 ≥ atan(dR) > -11.25° -> head North
+  - -0.2 ≥ rD > -0.66 then -11.25 ≥ atan(dR) > -33.75° -> head North-North-West
+  - -0.66 ≥ rD > -1.5 then -33.75 ≥ atan(dR) > -56.25° -> head North-West
+  - -1.5 ≥ rD > -5 then -56.25 ≥ atan(dR) > -78.75° -> head North-West-West
+  - -5 ≥ rD then -78.75 ≥ atan(dR) -> head West
+- If dla is negative, then same as above, with North replaced by South
 
