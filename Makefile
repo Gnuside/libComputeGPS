@@ -8,7 +8,7 @@ CFILES=$(wildcard $(SRCDIR)/*.c)
 OBJS=$(CFILES:.c=.o)
 
 
-SUBDIRS = src tests
+SUBDIRS = src
 
 .PHONY: subdirs $(SUBDIRS)
 
@@ -18,6 +18,10 @@ $(SUBDIRS):
 	$(MAKE) -C $@
 
 tests: src
+	$(MAKE) -C $@
+
+run_test: src tests
+	$(MAKE) -C $@ run
 
 clean:
 	for dir in $(SUBDIRS); do \
