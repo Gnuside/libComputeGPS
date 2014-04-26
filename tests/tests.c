@@ -7,7 +7,5 @@
 
 
 int main() {
-	int failed = 0;
-
-	return failed;
+	return 0;
 }
