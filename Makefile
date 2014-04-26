@@ -1,10 +1,12 @@
 CC=gcc
 AR=ar
+MAKE=make
 CFLAGS= -Wall -pedantic -std=c99
 SRCDIR=src
 SOURCES=$(wildcard $(SRCDIR)/*.[hc])
 CFILES=$(wildcard $(SRCDIR)/*.c)
 OBJS=$(CFILES:.c=.o)
+
 
 SUBDIRS = src tests
 

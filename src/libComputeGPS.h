@@ -59,6 +59,13 @@ typedef signed char s8;
 typedef unsigned char u8;
 #endif // u8
 
+#ifndef boolean
+#define boolean boolean
+#define TRUE (1==1)
+#define FALSE (1==0)
+typedef u8 boolean;
+#endif // boolean
+
 
 
 /***** Type declarations and corresponding constants *****/

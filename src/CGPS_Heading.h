@@ -41,7 +41,7 @@ extern const cgps_heading_t CGPS_HEADING_NORTH_NORTH_WEST;
 
 /***** Functions declarations *****/
 // see their descriptions in their file or in libComputeGPS.md
-//extern boolean CGPS_IsValidHeading (cgps_heading_t heading);
+extern boolean CGPS_IsValidHeading (cgps_heading_t heading);
 extern cgps_heading_t CGPS_ApproxHeadingFromStartToArrival(
 	  const cgps_coord_t *start,
 	  const cgps_coord_t *arrival

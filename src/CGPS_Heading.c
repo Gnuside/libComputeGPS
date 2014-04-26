@@ -33,9 +33,7 @@ const cgps_heading_t CGPS_HEADING_NORTH_WEST       = 14;
 const cgps_heading_t CGPS_HEADING_NORTH_NORTH_WEST = 15;
 
 
-/*
- * bool CGPS_IsValidHeading(cgps_heading_t heading) {
+boolean CGPS_IsValidHeading(cgps_heading_t heading) {
 	return ((heading >= CGPS_HEADING_NORTH)
 	  && (heading <= CGPS_HEADING_NORTH_WEST));
 }
-*/
