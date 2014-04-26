@@ -20,15 +20,15 @@ Compilation
 
 To compile the project please take a look at the dependencies.
 
-  autoreconf --install
-  ./configure
-  make
+    autoreconf --install
+    ./configure
+    make
 
 This should do the work.
 
 To compile and run the tests suite :
 
-  make check
+    make check
 
 More information
 ----------------
