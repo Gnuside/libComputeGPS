@@ -14,5 +14,7 @@
 
 #include <libComputeGPS.h>
 
+const char cgps_version[] = PACKAGE_VERSION;
+
 const cgps_latitude_t cgps_lat_invalid = 0x80000000;
 const cgps_longitude_t cgps_lon_invalid = 0x80000000;
