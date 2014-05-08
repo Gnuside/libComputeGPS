@@ -47,49 +47,49 @@ Naming and programmation conventions
   - space are refused because anyone visual confort can be managed with tab
   - when functions declaration needs to take several lines, former indentation
   is done with spaces.
-- every global elements are preceded by `CGPS_` :
+- every global elements are preceded by `CGPS\_` :
   - functions
   - constants
   - global variable if any (shouldn't have any)
   - type definitions
 - functions are named with capital letters on each words
-  - argument words may be separeted by `_`
+  - argument words may be separeted by `\_`
   - return statement must be called once by function
   - goto usage must be reduce to the minimum and JUSTIFIED (comments and
   explanation MANDATORY)
-  - arguments unaltered structures are passed as const type * to allow constant
+  - arguments unaltered structures are passed as const type \* to allow constant
   usage in function calling
-- constants use uppercase letters only, and words are separated by `_`
-- global variables use downcase letters only (including `cgps_` prefix) and
-words are separated with `_`
-- type definition use the same as variable convention, except that a `_t` is
+- constants use uppercase letters only, and words are separated by `\_`
+- global variables use downcase letters only (including `cgps\_` prefix) and
+words are separated with `\_`
+- type definition use the same as variable convention, except that a `\_t` is
 added at the end of the type name.
 
 Examples :
 
-  int cgps_global_variable;
+  int cgps\_global\_variable;
 
-  static int const CGPS_CONSTANT_DEFINITION 3; // prefere this declaration for
+  static int const CGPS\_CONSTANT\_DEFINITION 3; // prefere this declaration for
   // constants instead of macro :
-  #define CGPS_CONSTANT_DEFINITION 3
+  #define CGPS\_CONSTANT\_DEFINITION 3
   // The principal reason is that because it is type safe.
 
   typedef struct {
-  	int something_stored;
-  	float something_else_stored;
-  } cgps_type_name_t;
+  	int something\_stored;
+  	float something\_else\_stored;
+  } cgps\_typename\_t;
 
-  int CGPS_FunctionWithSeveralWords(int first_argument, float second_argument) {
-  	/* indentation with tabulations */
+  int CGPS\_FunctionWithSeveralWords(int first\_argument, float second\_argument) {
+  	/\* indentation with tabulations \*/
   	...
   	return result; // only one return statement and must be the last instruction
   }
 
-  int CGPS_FunctionWithALotOfArgumentsAndALongName(
+  int CGPS\_FunctionWithALotOfArgumentsAndALongName(
   	  //one indentation + 2 spaces
-		  int first_argument,
-		  float second_argument,
-		  const int *third_argument
+		  int first\_argument,
+		  float second\_argument,
+		  const int \*third\_argument
 		  ) {
 		// We return to normal indentation
 		// third argument won't be altered so
@@ -109,17 +109,17 @@ ones as reference to make yours.
 Types
 =====
 
-cgps_coord_t
+cgps\_coord\_t
 ------------
 
 This type allow to store latitude and longitude.
 
-cgps_position_t
+cgps\_position\_t
 ---------------
 
 This type allow to store latitude, longitude and altitude.
 
-cgps_heading_t
+cgps\_heading\_t
 --------------
 
 This allow to store a heading direction.
@@ -131,30 +131,31 @@ This has a precision of 1/16th of 360° :
 ....
 - 15 => 337.5° => North-North-West
 
-Check CGPS_HEADING_* constants
+Check CGPS\_HEADING\_\* constants
 
 Functions
 =========
 
-CGPS_IsValidHeading
--------------------
+CGPS\_IsValidHeading
+--------------------
 
 ### Arguments :
-- cgps_heading_t heading
+
+- cgps\_heading\_t heading
 
 ### Result :
 
 Return true if heading value is correct.
 
-CGPS_ApproxHeadingFromStartToArrival
+CGPS\_ApproxHeadingFromStartToArrival
 -----------------------------------
 
 ### Arguments :
-- const cgps_coord_t *start
-- const cgps_coord_t *arrival
+- const cgps\_coord\_t \*start
+- const cgps\_coord\_t \*arrival
 
 ### Result :
-- cpgs_heading_t
+- cpgs\_heading\_t
 
 ### Validity :
 
@@ -187,4 +188,24 @@ We also compute the ratio between dlo and dla, and we call it rD.
   - -1.5 ≥ rD > -5 then -56.25 ≥ atan(dR) > -78.75° -> head North-West-West
   - -5 ≥ rD then -78.75 ≥ atan(dR) -> head West
 - If dla is negative, then same as above, with North replaced by South
+
+
+CGPS\_adaLatToCgpsLat
+---------------------
+
+### Arguments :
+- float lat : latitude to convert
+
+### Result :
+- cgps\_latitude\_t
+
+CGPS\_adaLonToCgpsLon
+---------------------
+
+### Arguments :
+- float lon : longitude to convert
+
+### Result :
+- cgps\_longitude\_t
+
 

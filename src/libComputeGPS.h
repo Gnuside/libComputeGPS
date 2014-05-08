@@ -102,6 +102,7 @@ typedef struct {
 
 
 #include <CGPS_Heading.h>
+#include <CGPS_AdafruitConversion.h>
 
 #ifdef __cplusplus
 } // extern "C"
