@@ -5,6 +5,7 @@
 
 // include your c files here
 #include "check_heading.c"
+#include "check_adafruit.c"
 
 
 int main() {
