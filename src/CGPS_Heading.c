@@ -37,3 +37,60 @@ boolean CGPS_IsValidHeading(cgps_heading_t heading) {
 	return ((heading >= CGPS_HEADING_NORTH)
 	  && (heading <= CGPS_HEADING_NORTH_WEST));
 }
+
+float CGPS_HeadingToDegree(cgps_heading_t heading) {
+	float res = 0;
+	switch(heading) {
+		case 0: //CGPS_HEADING_NORTH:
+			res = 0.0;
+			break;
+		case 1: //CGPS_HEADING_NORTH_NORTH_EAST:
+			res = 22.5;
+			break;
+		case 2: //CGPS_HEADING_NORTH_EAST:
+			res = 45.0;
+			break;
+		case 3: //CGPS_HEADING_NORTH_EAST_EAST:
+			res = 67.5;
+			break;
+		case 4: //CGPS_HEADING_EAST:
+			res = 90.0;
+			break;
+		case 5: //CGPS_HEADING_SOUTH_EAST_EAST:
+			res = 112.5;
+			break;
+		case 6: //CGPS_HEADING_SOUTH_EAST:
+			res = 135.0;
+			break;
+		case 7: //CGPS_HEADING_SOUTH_SOUTH_EAST:
+			res = 157.5;
+			break;
+		case 8: //CGPS_HEADING_SOUTH:
+			res = 180.0;
+			break;
+		case 9: //CGPS_HEADING_SOUTH_SOUTH_WEST:
+			res = 202.5;
+			break;
+		case 10: //CGPS_HEADING_SOUTH_WEST:
+			res = 225.0;
+			break;
+		case 11: //CGPS_HEADING_SOUTH_WEST_WEST:
+			res = 247.5;
+			break;
+		case 12: //CGPS_HEADING_WEST:
+			res = 270.0;
+			break;
+		case 13: //CGPS_HEADING_NORTH_WEST_WEST:
+			res = 292.5;
+			break;
+		case 14: //CGPS_HEADING_NORTH_WEST:
+			res = 315.0;
+			break;
+		case 15: //CGPS_HEADING_NORTH_NORTH_WEST:
+			res = 337.5;
+			break;
+		default:
+			res = 0.0/0.0;
+	}
+	return res;
+}
