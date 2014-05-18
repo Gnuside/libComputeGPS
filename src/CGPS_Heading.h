@@ -47,4 +47,6 @@ extern cgps_heading_t CGPS_ApproxHeadingFromStartToArrival(
 	  const cgps_coord_t *arrival
 	);
 
+extern float CGPS_HeadingToDegree(cgps_heading_t heading);
+
 #endif // __CGPS_HEADING_H__
